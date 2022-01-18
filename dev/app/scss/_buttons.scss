@@ -1,0 +1,28 @@
+/* buttons */
+.btn {
+	appearance: none;
+	user-select: none;
+	display: inline-block;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 2rem 1rem;
+	font: $ultra-bold 1.8rem/1 $font-family-base;
+	text-align: center;
+	text-decoration: none;
+	transition: $transition;
+
+	@include media('>=md') {
+		padding-top: 2.4rem;
+		padding-bottom: 2.4rem;
+	}
+
+	&--block {
+		display: block;
+		width: 100%;
+	}
+
+	&--primary {
+		color: $white;
+		@include magic-border(2px, $white, 0.3s, 0);
+	}
+}

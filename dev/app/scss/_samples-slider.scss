@@ -1,0 +1,166 @@
+/* samples-slider */
+.samples-slider {
+	&__slide {
+		display: flex;
+
+		@include media('<lg') {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 3;
+		display: flex;
+		align-items: center;
+		padding: 2.4rem 0;
+		background-color: $primary;
+		color: $white;
+
+		@include media('>=md') {
+			padding: 4rem 0;
+		}
+		
+		@include media('>=lg') {
+			min-height: 53rem;
+			width: 45.4rem;
+		}
+		
+		@include media('>=xxl') {
+			width: 57.7rem;
+			min-height: 74rem;
+		}
+	}
+
+	&__container {
+		max-width: 100%;
+
+		@include media('>=lg') {
+			padding-left: 5.6rem;
+		}
+
+		@include media('>=lg') {
+			padding-right: 0;
+		}
+	}
+
+	&__subtitle {
+		display: block;
+		margin-bottom: 3rem;
+		color: $grey-dark;
+		font-size: 1.4rem;
+		font-weight: $medium;
+		line-height: 2;
+	}
+
+	&__title {
+		margin-bottom: 1.5rem;
+		white-space: nowrap;
+	}
+
+	&__text {
+		margin-bottom: 0;
+	}
+
+	&__image-wrapper {
+		position: relative;
+		flex-grow: 1;
+
+		@include media('<lg') {
+			padding-top: 92.5%;
+		}
+	}
+
+	&__image {
+		@include position-cover();
+	}
+
+	&__arrow {
+		width: 6.8rem;
+		height: 4.9rem;
+		margin: 0;
+		transform: translateY(-50%);
+		color: $text;
+		opacity: .5;
+		outline: none;
+
+		@include media('<lg') {
+			top: auto;
+			bottom: 0;
+			margin-bottom: calc(92.5% / 2);
+			transform: translateY(50%);
+		}
+		
+		&:hover:not(:active) {
+			color: $white;
+		}
+		
+		&::after {
+			display: none;
+		}
+		
+		img, svg {
+			width: 100%;
+			height: auto;
+			transition: $transition;
+		}
+
+		&--prev {
+			left: 1.6rem;
+			transform: translateY(50%) scale(-1);
+
+			@include media('>=md') {
+				left: 4rem;
+			}
+			
+			@include media('>=lg') {
+				transform: translateY(-50%) scale(-1);
+				left: calc(45.4rem + 4rem);
+			}
+			
+			@include media('>=xxl') {
+				left: calc(57.7rem + 4rem);
+			}
+		}
+
+		&--next {
+			right: 1.6rem;
+
+			@include media('>=md') {
+				right: 4rem;
+			}
+		}
+	}
+
+	&__counter {
+		user-select: none;
+		pointer-events: none;
+		position: absolute;
+		z-index: 2;
+		color: rgba($white, .5);
+		font: $extra-light 14.4rem/1 $ivy-mode;
+
+		@include media('<lg') {
+			bottom: 0;
+			left: -0.256em;
+			margin-bottom: 92.5%;
+			transform: translateY(100%);
+		}
+
+		@include media('>=md') {
+			font-size: 24rem;
+		}
+
+		@include media('>=lg') {
+			top: 0.129em;
+			left: -0.1625em;
+			color: rgba($white, .05);
+		}
+		
+		@include media('>=xxl') {
+			top: 0.1em;
+			left: -0.225em;
+			font-size: 40rem;
+		}
+	}
+}

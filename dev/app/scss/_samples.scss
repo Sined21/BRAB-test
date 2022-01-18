@@ -1,0 +1,9 @@
+/* samples */
+.samples {
+	position: relative;
+	margin-bottom: 10rem;
+
+	@include media('>=lg', '<xxl') {
+		margin-bottom: 4rem;
+	}
+}

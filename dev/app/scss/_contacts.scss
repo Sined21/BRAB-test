@@ -1,0 +1,99 @@
+/* contacts */
+.contacts {
+	position: relative;
+	color: $white;
+	padding: 7.6rem 0;
+
+	@include media('>=md') {
+		padding: 6.3rem 0;
+	}
+	
+	@include media('>=xxl') {
+		padding: 13rem 0;
+	}
+
+	&::before {
+		content: '';
+		@include position-side();
+		z-index: 1;
+		background-color: rgba($black, .7);
+	}
+
+	&__bg {
+		@include position-cover();
+	}
+
+	&__container {
+		position: relative;
+		z-index: 2;
+
+		@include media('>=md') {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__content {
+		@include media('>=md') {
+			margin-right: 2rem;
+		}
+
+		@include media('>=xxl') {
+			width: 50%;
+			margin-right: 5rem;
+		}
+	}
+
+	&__content,
+	&__form {
+		@include media('>=md', '<xxl') {
+			max-width: 42.4rem;
+			flex: 1;
+		}
+	}
+
+	&__title {
+		margin-bottom: 2.4rem;
+
+		@include media('>=md') {
+			margin-bottom: 0;
+		}
+
+		@include media('<xxl') {
+			font-size: 0;
+
+			&::after {
+				content: attr(data-text-md);
+				font-size: 3.2rem;
+			}
+		}
+
+		@include media('<md') {
+			&::after {
+				font-size: 2rem;
+				font-weight: $light;
+				line-height: 1.5;
+			}
+		}
+	}
+	
+	&__form {
+		@include media('>=md') {
+			flex-grow: 1;
+			margin-left: auto;
+		}
+		
+		@include media('>=xxl') {
+			max-width: 52rem;
+			margin-right: auto;
+		}
+	}
+
+	&__group {
+		margin-bottom: 2.4rem;
+
+		@include media('>=xxl') {
+			margin-bottom: 4.5rem;
+		}
+	}
+}

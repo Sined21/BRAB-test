@@ -1,0 +1,49 @@
+// vars
+$images: '../images/';
+$fonts: '../fonts/';
+
+// typography
+$montserrat: 'Montserrat', sans-serif;
+$ivy-mode: 'Ivy Mode', sans-serif;
+
+$extra-light: 200 !default;
+$light: 300 !default;
+$regular: 400 !default;
+$medium: 500 !default;
+$semi-bold: 500 !default;
+$bold: 700 !default;
+$extra-bold: 800 !default;
+$ultra-bold: 900 !default;
+
+// breakpoints
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+// colors
+$white: #fff;
+$black: #000;
+$text: #04040E;
+$primary: #2F6067;
+$grey-dark: #B8B8B9;
+
+// base vars
+$body-color: $text;
+$body-bg: $white;
+$font-family-base: $montserrat;
+$font-size-base: 2rem;
+$line-height-base: 1.5;
+$font-weight-base: $light;
+$links-color-base: inherit;
+$headings-font-weight: $ultra-bold;
+
+$transition: all .3s ease;
+
+// dev2
+// dev3
+// dev4

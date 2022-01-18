@@ -1,0 +1,44 @@
+.bg-img {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+img.lazyload {
+	opacity: 0;
+	transition: opacity 0.3s;
+
+	&.lazyloaded {
+		opacity: 1;
+	}
+}
+
+.container {
+	padding-left: 1.6rem;
+	padding-right: 1.6rem;
+	
+	@include media('>=md') {
+		padding-left: 3rem;
+		padding-right: 2rem;
+	}
+	
+	@include media('>=xxl') {
+		padding-left: 5.6rem;
+		padding-right: 4rem;
+	}
+}
+
+// dev2
+// dev3
+// dev4

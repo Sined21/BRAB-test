@@ -1,0 +1,86 @@
+/* preview-slider */
+.preview-slider {
+	$parent: &;
+	position: absolute;
+	z-index: 10;
+	width: 30rem;
+
+	@include media('<lg') {
+		left: 50%;
+		transform: translate(-50%, -60%);
+	}
+	
+	@include media('>=lg') {
+		right: 2rem;
+		bottom: 2rem;
+		width: 26rem;
+	}
+	
+	@include media('>=xxl') {
+		right: 10.8rem;
+		bottom: 6rem;
+		width: 33.2rem;
+	}
+	
+	&__slide {
+		cursor: pointer;
+		display: flex;
+		background: rgba($white, .3);
+		box-shadow: 0 .4rem 1.2rem rgba(34, 34, 34, 0.1);
+		backdrop-filter: blur(.6rem);
+		border-radius: 1.2rem;
+		overflow: hidden;
+
+		&:hover {
+			#{$parent}__image {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	&__image-wrapper {
+		flex-shrink: 0;
+		position: relative;
+		width: 11.1rem;
+		min-height: 11.1rem;
+		overflow: hidden;
+
+		@include media('>=lg','<xxl') {
+			width: 8.5rem;
+			min-height: 8.5rem;
+		}
+	}
+
+	&__image {
+		@include position-cover();
+		transition: $transition !important;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 1.5rem;
+
+		@include media('>=lg','<xxl') {
+			padding: 1.2rem;
+		}
+	}
+
+	&__title {
+		font-size: 1.4rem;
+		font-weight: $light;
+		margin-bottom: 0;
+	}
+
+	&__text {
+		margin-bottom: .8rem;
+		font-size: 1.4rem;
+		font-weight: $medium;
+		line-height: 2;
+
+		@include media('>=lg','<xxl') {
+			margin-bottom: 0;
+		}
+	}
+}
